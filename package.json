@@ -1,0 +1,46 @@
+{
+  "author": "Sherpad Ndabambi",
+  "bin": {
+    "backup-repos": "./dist/index.js"
+  },
+  "bugs": {
+    "url": "https://github.com/sherpadndabambi/backup-repos/issues"
+  },
+  "description": "A script to scan repos for unpushed changes and back them up.",
+  "devDependencies": {
+    "@types/inquirer": "^9.0.7",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.18.13",
+    "inquirer": "^12.5.2",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.3.2",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.20.6",
+    "typescript": "^5.8.3"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "engines": {
+    "node": ">=20.6.0"
+  },
+  "homepage": "https://github.com/sherpadndabambi/backup-repos#readme",
+  "license": "ISC",
+  "main": "index.js",
+  "name": "backup-repos",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sherpadndabambi/backup-repos.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && node --env-file=.env dist/index.js",
+    "setup": "tsx assets/ts/setup.ts",
+    "test": "jest"
+  },
+  "type": "module",
+  "version": "1.0.0",
+  "dependencies": {
+    "commander": "^14.0.2"
+  }
+}
