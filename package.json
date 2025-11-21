@@ -1,7 +1,7 @@
 {
   "author": "Sherpad Ndabambi",
   "bin": {
-    "backup-repos": "./dist/index.js"
+    "backup-repos": "./dist/cli.js"
   },
   "bugs": {
     "url": "https://github.com/sherpadndabambi/backup-repos/issues"
@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/sherpadndabambi/backup-repos#readme",
   "license": "ISC",
-  "main": "index.js",
+  "main": "cli.js",
   "name": "backup-repos",
   "repository": {
     "type": "git",
@@ -34,7 +34,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "start": "npm run build && node --env-file=.env dist/index.js",
+    "start": "npm run build && node --env-file=.env dist/cli.js",
     "setup": "tsx assets/ts/setup.ts",
     "test": "jest"
   },
