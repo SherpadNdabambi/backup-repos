@@ -40,7 +40,9 @@
     "build": "tsc",
     "start": "npm run build && node --env-file=.env dist/cli.js",
     "setup": "tsx assets/ts/setup.ts",
-    "test": "jest"
+    "test": "npm run test:unit && npm run test:integration",
+    "test:integration": "jest --config jest.integration.config.ts",
+    "test:unit": "jest --config jest.unit.config.ts"
   },
   "type": "module",
   "version": "1.0.0"

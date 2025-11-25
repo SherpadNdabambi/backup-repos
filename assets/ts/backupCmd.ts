@@ -9,8 +9,8 @@ import { Command } from "commander";
 
 const backupCmd = new Command()
   .action(backupRepos)
-  .arguments("<paths...>")
   .allowExcessArguments(false)
+  .arguments("<paths...>")
   .description(
     "Backs up git repositories under one or more paths with unpushed changes to a backup location."
   )
