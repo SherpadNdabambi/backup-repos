@@ -6,6 +6,10 @@
   "bugs": {
     "url": "https://github.com/sherpadndabambi/backup-repos/issues"
   },
+  "dependencies": {
+    "commander": "^14.0.2",
+    "glob": "^13.0.0"
+  },
   "description": "A script to scan repos for unpushed changes and back them up.",
   "devDependencies": {
     "@types/inquirer": "^9.0.7",
@@ -39,8 +43,5 @@
     "test": "jest"
   },
   "type": "module",
-  "version": "1.0.0",
-  "dependencies": {
-    "commander": "^14.0.2"
-  }
+  "version": "1.0.0"
 }
