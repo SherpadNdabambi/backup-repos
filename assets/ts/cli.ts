@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { backupCmd } from "./app.js";
+import { backupCmd } from "./backupCmd.js";
 import { Command } from "commander";
 
 const program = new Command()
