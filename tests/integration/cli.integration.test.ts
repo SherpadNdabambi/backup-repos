@@ -6,7 +6,6 @@
  *
  * @test --help exits with code 0 and shows usage
  * @test --version shows correct version
- * @test no arguments shows help (commander default behaviour)
  * @test unknown command shows error and exits with non-zero code
  */
 import { execSync } from "child_process";
