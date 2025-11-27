@@ -1,6 +1,14 @@
 /**
  * @file backupRepos.test.ts
  * @description Unit tests for backupRepos
+ *
+ * Test cases:
+ *
+ * @test {backupRepos} exits with error and prints usage when fewer than 2 paths + backup location are provided
+ * @test {backupRepos} correctly separates source paths from backup location
+ * @test {backupRepos} processes single source path correctly
+ * @test {backupRepos} logs expected messages during normal execution
+ * @test {backupRepos} catches and logs errors from backupTemps without crashing
  */
 import { backupRepos } from "../../assets/ts/backupRepos.js";
 import * as backupTemps from "../../assets/ts/backupTemps.js";
