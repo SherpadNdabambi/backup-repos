@@ -8,8 +8,8 @@
  *
  * @test {backupCmd} should call backupRepos with correct arguments
  */
-import { backupCmd } from "../../assets/ts/backupCmd";
 import * as backupRepos from "../../assets/ts/backupRepos";
+import { backupCmd } from "../../assets/ts/backupCmd";
 
 jest.mock("../../assets/ts/backupRepos");
 

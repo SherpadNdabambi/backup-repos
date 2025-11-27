@@ -10,9 +10,9 @@
  * @test {backupRepos} logs expected messages during normal execution
  * @test {backupRepos} catches and logs errors from backupTemps without crashing
  */
-import { backupRepos } from "../../assets/ts/backupRepos.js";
 import * as backupTemps from "../../assets/ts/backupTemps.js";
 import * as processAllReposUnder from "../../assets/ts/processAllReposUnder.js";
+import { backupRepos } from "../../assets/ts/backupRepos.js";
 import os from "os";
 import path from "path";
 
