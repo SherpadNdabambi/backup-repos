@@ -16,9 +16,7 @@ jest.mock("../../assets/ts/backupRepos");
 describe("backupCmd", () => {
   const mockBackupRepos = jest.spyOn(backupRepos, "backupRepos");
 
-  mockBackupRepos.mockImplementation(async () => {
-    console.log("mocked backupRepos");
-  });
+  mockBackupRepos.mockImplementation(async () => {});
 
   test("should call backupRepos with correct arguments", () => {
     backupCmd.parse(["backup/source1", "backup/destination"], { from: "user" });
