@@ -6,6 +6,7 @@
  *
  * @test {isIgnored} should return true if the directory is ignored
  * @test {isIgnored} should return false if the directory is not ignored
+ * @test {isIgnored} should return false if no .git directory is found
  */
 // tests/unit/isIgnored.unit.test.ts
 
