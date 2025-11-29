@@ -36,8 +36,14 @@ async function processRepo(
   let hasUpstream = false;
   try {
     await shell(`git rev-parse --verify ${upstream}`, { cwd: repoPath });
+    // Debugging
+    console.error(`${repoPath} has upstream`);
+
     hasUpstream = true;
   } catch (e) {
+    // Debugging
+    console.error(`${repoPath} does not have upstream`);
+
     hasUpstream = false;
   }
 
