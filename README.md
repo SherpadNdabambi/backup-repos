@@ -154,6 +154,8 @@ _For more examples, please refer to the [Documentation][Documentation url]_
 
 ## Roadmap
 
+- [ ] Finish writing processRepo unit tests
+
 See the [open issues][Issues url] for a full list of proposed features (and known issues).
 
 <div align=right>
