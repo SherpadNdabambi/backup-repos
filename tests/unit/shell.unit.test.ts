@@ -18,6 +18,7 @@ jest.mock("child_process", () => ({
 
 const mockedExec = exec as jest.MockedFunction<typeof exec>;
 
+// Test suite for shell
 describe("shell()", () => {
   beforeEach(() => {
     mockedExec.mockClear();
