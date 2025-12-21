@@ -21,7 +21,8 @@ async function backupRepos(): Promise<void> {
 
   if (args.length < 2) {
     console.error(
-      "Usage: backup-repos backup <path1> [<path2> ...] <backup-location>"
+      `Error: Too few arguments.
+Usage: backup-repos backup <path1> [<path2> ...] <backup-location>`
     );
     process.exit(1);
   }
