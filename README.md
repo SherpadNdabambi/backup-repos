@@ -13,13 +13,13 @@
 
 <div align=center>
 
-[![backupRepos logo][Logo url]][Repo url]
+[![Repo Backup Tool CLI logo][Logo url]][Repo url]
 
 </div>
 
 <div align=center>
 
-# backupRepos
+# Repo Backup Tool CLI
 
 </div>
 
@@ -51,7 +51,7 @@
 
 A script to scan repos for unpushed changes and back them up.
 
-[![backupRepos screenshot][backupRepos screenshot url]][backupRepos url]
+[![Repo Backup Tool CLI screenshot][Repo Backup Tool CLI screenshot url]][Repo Backup Tool CLI url]
 
 <div align=right>
 
@@ -125,7 +125,7 @@ Make sure you have the following packages installed globally on your machine to 
 Scan git repositories under one or more specified paths for unpushed changes (or all files if no upstream remote) and back them up to a structured location:
 
 ```sh
-backup-repos backup <path1> [<path2> ...] <backup-location>
+repo-backup-tool-cli backup <path1> [<path2> ...] <backup-location>
 ```
 
 #### Arguments
@@ -137,7 +137,7 @@ backup-repos backup <path1> [<path2> ...] <backup-location>
 #### Example
 
 ```sh
-backup-repos backup ~/my-notes ~/repos ~/backups
+repo-backup-tool-cli backup ~/my-notes ~/repos ~/backups
 ```
 
 This will process repos under `~/my-notes` and `~/repos`, copy modified/untracked files to `~/backups/Backups/<platform>/~/my-notes/<repo-name>/` (etc.), and also back up non-ignored `temp/` directories under `<repos-path>`. Files unchanged since last backup are skipped.
@@ -234,23 +234,23 @@ Distributed under the ISC License. See [LICENSE][License url] for more informati
 
 <!-- References -->
 
-[Contributors shield url]: https://img.shields.io/github/contributors/sherpadNdabambi/backup-repos.svg?style=flat
-[Contributors url]: https://github.com/sherpadNdabambi/backup-repos/graphs/contributors
-[Issues shield url]: https://img.shields.io/github/issues/sherpadNdabambi/backup-repos.svg?style=flat
-[Issues url]: https://github.com/sherpadNdabambi/backup-repos/issues
-[License shield url]: https://img.shields.io/github/license/SherpadNdabambi/backup-repos
+[Contributors shield url]: https://img.shields.io/github/contributors/sherpadNdabambi/repo-backup-tool-cli.svg?style=flat
+[Contributors url]: https://github.com/sherpadNdabambi/repo-backup-tool-cli/graphs/contributors
+[Issues shield url]: https://img.shields.io/github/issues/sherpadNdabambi/repo-backup-tool-cli.svg?style=flat
+[Issues url]: https://github.com/sherpadNdabambi/repo-backup-tool-cli/issues
+[License shield url]: https://img.shields.io/github/license/SherpadNdabambi/repo-backup-tool-cli
 [License url]: ./LICENSE
 [Logo url]: ./assets/img/logo.svg
-[Repo url]: https://github.com/SherpadNdabambi/backup-repos/
+[Repo url]: https://github.com/SherpadNdabambi/repo-backup-tool-cli/
 [Node.js shield url]: https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white
 [Node.js url]: https://nodejs.org/
-[backupRepos screenshot url]: ./assets/img/og-image.png
-[backupRepos url]: https://github.com/sherpadNdabambi/backup-repos/
+[Repo Backup Tool CLI screenshot url]: ./assets/img/og-image.png
+[Repo Backup Tool CLI url]: https://github.com/sherpadNdabambi/repo-backup-tool-cli/
 [Typescript shield url]: https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white
 [Typescript url]: https://www.typescriptlang.org/
 [npm url]: https://www.npmjs.com/
-[latest release url]: https://github.com/sherpadNdabambi/backup-repos/releases/latest
-[Documentation url]: https://sherpadndabambi.github.io/backup-repos/
+[latest release url]: https://github.com/sherpadNdabambi/repo-backup-tool-cli/releases/latest
+[Documentation url]: https://sherpadndabambi.github.io/repo-backup-tool-cli/
 [changelog url]: ./CHANGELOG.md
 [Personal website url]: https://sherpadndabambi.github.io/
 [Email address]: mailto:sgndabambi@gmail.com

@@ -1,10 +1,10 @@
 {
   "author": "Sherpad Ndabambi",
   "bin": {
-    "backup-repos": "./dist/cli.js"
+    "repo-backup-tool-cli": "./dist/cli.js"
   },
   "bugs": {
-    "url": "https://github.com/sherpadndabambi/backup-repos/issues"
+    "url": "https://github.com/sherpadndabambi/repo-backup-tool-cli/issues"
   },
   "dependencies": {
     "commander": "^14.0.2",
@@ -28,13 +28,13 @@
   "engines": {
     "node": ">=20.6.0"
   },
-  "homepage": "https://github.com/sherpadndabambi/backup-repos#readme",
+  "homepage": "https://github.com/sherpadndabambi/repo-backup-tool-cli#readme",
   "license": "ISC",
   "main": "cli.js",
-  "name": "backup-repos",
+  "name": "repo-backup-tool-cli",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sherpadndabambi/backup-repos.git"
+    "url": "git+https://github.com/sherpadndabambi/repo-backup-tool-cli.git"
   },
   "scripts": {
     "build": "tsc",
@@ -45,5 +45,5 @@
     "test:unit": "jest --config jest.unit.config.ts"
   },
   "type": "module",
-  "version": "1.0.0"
+  "version": "2.0.0"
 }
