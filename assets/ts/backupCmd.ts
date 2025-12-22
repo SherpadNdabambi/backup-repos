@@ -14,6 +14,10 @@ const backupCmd = new Command()
   .description(
     "Backs up git repositories under one or more paths with unpushed changes to a backup location."
   )
-  .name("backup");
+  .name("backup")
+  .option(
+    "-w, --watch",
+    "Watch for changes to source files and back them up automatically."
+  );
 
 export { backupCmd };
