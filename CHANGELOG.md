@@ -4,6 +4,12 @@ All notable changes to Repo Backup Tool CLI will be documented in this file.
 
 The format is based on [Keep a Changelog][Keep a Changelog url], and this project adheres to [Semantic Versioning][Semantic Versioning url].
 
+## [2.1.0] (22 December 2025)
+
+### Added
+
+1. Added watch mode to scan for changes to source files and back them up automatically.
+
 ## [2.0.0] (22 December 2025)
 
 ### Changed
@@ -26,5 +32,6 @@ The format is based on [Keep a Changelog][Keep a Changelog url], and this projec
 
 [Keep a Changelog url]: https://keepachangelog.com/en/1.0.0/
 [Semantic Versioning url]: https://semver.org/spec/v2.0.0.html
+[2.0.1]: https://github.com/SherpadNdabambi/repo-backup-tool-cli/releases/tag/v2.0.1
 [2.0.0]: https://github.com/SherpadNdabambi/repo-backup-tool-cli/releases/tag/v2.0.0
 [1.0.0]: https://github.com/SherpadNdabambi/repo-backup-tool-cli/releases/tag/v1.0.0
