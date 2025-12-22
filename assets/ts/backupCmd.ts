@@ -8,7 +8,7 @@ import { backupRepos } from "./backupRepos.js";
 import { Command } from "commander";
 
 const backupCmd = new Command()
-  .action(backupRepos)
+  .action(backupRepos as BackupCmdAction)
   .allowExcessArguments(false)
   .arguments("<paths...>")
   .description(
@@ -19,5 +19,7 @@ const backupCmd = new Command()
     "-w, --watch",
     "Watch for changes to source files and back them up automatically."
   );
+
+type BackupCmdAction = (paths: string[], cmd: Command) => Promise<void>;
 
 export { backupCmd };
