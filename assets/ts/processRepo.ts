@@ -4,6 +4,7 @@
  *
  * @exports processRepo
  */
+import { findOrphanedBackups } from "./findOrphanedBackups.js";
 import { exists } from "./exists.js";
 import fs from "fs";
 import fspromises from "fs/promises";
@@ -11,7 +12,7 @@ import path from "path";
 import { shell } from "./shell.js";
 
 /**
- * eslint-disable-next-line @typescript-eslint/no-unused-vars
+ * Process a single git repository
  *
  * @param {string} repoPath - The path to the repository
  * @param {string} backupRepo - The path to the backup location
@@ -68,6 +69,23 @@ async function processRepo(
         }
       }
     }
+
+    // Also include untracked (non-ignored) files even when upstream exists
+    const { stdout: untrackedOut } = await shell(
+        "git ls-files --others --exclude-standard -z",
+        { cwd: repoPath }
+      ),
+      untrackedFiles = untrackedOut
+        .trim()
+        .split("\0")
+        .filter((f) => f);
+
+    for (const file of untrackedFiles) {
+      const bFile = path.join(backupRepo, file),
+        fullFile = path.join(repoPath, file);
+
+      filesToCopy.push({ src: fullFile, dst: bFile });
+    }
   } else {
     // No remote or no upstream: backup all non-ignored files (tracked + untracked non-ignored)
     console.log(
@@ -103,13 +121,37 @@ async function processRepo(
       filesToCopy.push({ src: fullFile, dst: bFile });
     }
   }
-  console.log(
-    `  Files to copy: ${filesToCopy.length}, Files to delete: ${filesToDelete.length}`
+
+  // Clean up files in backup that no longer exist in repo (handles deleted
+  // untracked files)
+  // Build set of expected relative paths in backup
+  const expectedRelPaths = new Set(
+    [...filesToCopy.map((f) => f.dst), ...filesToDelete.map((f) => f)] // filesToDelete already handled below
+      .map((p) => path.relative(backupRepo, p).replace(/\\/g, "/"))
   );
+
+  const orphanedBackups = await findOrphanedBackups(
+    backupRepo,
+    backupRepo,
+    expectedRelPaths
+  );
+
+  console.log(
+    `  Files to copy: ${filesToCopy.length}
+  Tracked files to delete: ${filesToDelete.length}
+  Orphaned backup files: to delete: ${orphanedBackups.length}`
+  );
+
+  // Add orphaned backups to files to delete
+  filesToDelete.push(...orphanedBackups);
 
   // Perform deletes
   for (const bFile of filesToDelete) {
+    console.log(" Deleting:", path.relative(repoPath, bFile));
+
     await fspromises.rm(bFile, { force: true });
+
+    console.log(" Deleted:", path.relative(repoPath, bFile));
   }
 
   // Perform copies (with mtime check)
